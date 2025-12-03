@@ -1,0 +1,20 @@
+[2KC:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\dataloader.p-:--[0m
+y:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device
+pinned memory won't be used.
+  warnings.warn(warn_msg)
+[2K[31mTraining:[0m [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m  0%[0m [36m-:--:--[0m
+[1A[2KExecution time: 0h 0min 11.84s
+Traceback (most recent call last):
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 361, in <module>
+    sys.exit(main(device, args))
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 239, in main
+    avg_train_loss = train_epoch(seld_model=seld_model, dev_train_iterator=dev_train_iterator, optimizer=optimizer, seld_loss=seld_loss, step_scheduler=step_scheduler)
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 85, in train_epoch
+    loss = seld_loss(logits, labels) / accum_steps
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\nn\modules\module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\nn\modules\module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\loss.py", line 93, in forward
+    output_accdoa = output.reshape(num_bs, num_frame, num_track, num_element, num_class)[:, :, :, 0:3, :]  # use accdoa + dist elements
+RuntimeError: shape '[64, 50, 3, 3, 14]' is invalid for input of size 374400

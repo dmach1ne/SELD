@@ -1,0 +1,23 @@
+2025-12-03 14:31:02,649 INFO    MainThread:35964 [wandb_setup.py:_flush():81] Current SDK version is 0.20.1
+2025-12-03 14:31:02,649 INFO    MainThread:35964 [wandb_setup.py:_flush():81] Configure stats pid to 35964
+2025-12-03 14:31:02,649 INFO    MainThread:35964 [wandb_setup.py:_flush():81] Loading settings from C:\Users\danielahn\.config\wandb\settings
+2025-12-03 14:31:02,649 INFO    MainThread:35964 [wandb_setup.py:_flush():81] Loading settings from C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\wandb\settings
+2025-12-03 14:31:02,649 INFO    MainThread:35964 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2025-12-03 14:31:02,650 INFO    MainThread:35964 [wandb_init.py:setup_run_log_directory():703] Logging user logs to C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\wandb\run-20251203_143102-fn4dlm0d\logs\debug.log
+2025-12-03 14:31:02,651 INFO    MainThread:35964 [wandb_init.py:setup_run_log_directory():704] Logging internal logs to C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\wandb\run-20251203_143102-fn4dlm0d\logs\debug-internal.log
+2025-12-03 14:31:02,651 INFO    MainThread:35964 [wandb_init.py:init():831] calling init triggers
+2025-12-03 14:31:02,651 INFO    MainThread:35964 [wandb_init.py:init():836] wandb.init called with sweep_config: {}
+config: {'modality': 'audio', 'net_type': 'DCASE2020_full_train', 'root_dir': '../dcase2025_stereo_seld_data_generator/output_2020_stereo/DCASE2020_Stereo_SELD_Dataset', 'feat_dir': '../dcase2025_stereo_seld_data_generator/output_2020_stereo/DCASE2020_Stereo_SELD_Dataset\\mel64', 'log_dir': 'logs', 'checkpoints_dir': 'checkpoints', 'output_dir': 'outputs', 'sampling_rate': 24000, 'hop_length_s': 0.0125, 'nb_mels': 64, 'max_freq': 2000, 'gamma': False, 'ipd': False, 'iv': False, 'slite': False, 'ms': False, 'fps': 10, 'resnet_feature_size': 49, 'nb_conv_blocks': 3, 'nb_conv_filters': 64, 'f_pool_size': [4, 4, 2], 't_pool_size': [2, 2, 2], 'dropout': 0.05, 'rnn_size': 128, 'nb_rnn_layers': 2, 'nb_self_attn_layers': 2, 'nb_attn_heads': 8, 'nb_fnn_layers': 1, 'fnn_size': 128, 'max_polyphony': 3, 'nb_classes': 14, 'label_sequence_length': 600, 'multiACCDOA': True, 'thresh_unify': 30, 'nb_epochs': 50, 'batch_size': 64, 'val_batch_size': 32, 'accum_batch': 64, 'nb_workers': 0, 'shuffle': True, 'persistent_workers': False, 'finetune': False, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'dev_train_folds': ['fold1', 'fold2', 'fold3', 'fold4', 'fold5', 'fold6'], 'dev_test_folds': ['eval'], 'average': 'macro', 'segment_based_metrics': False, 'sed_thresh': 0.5, 'lad_doa_thresh': 20, 'lad_dist_thresh': inf, 'lad_reldist_thresh': 1.0, 'lad_req_onscreen': False, 'use_jackknife': False, 'dnorm': False, 'd_mean': 1.9242867099100318, 'd_std': 0.663059233462568, 'd_max': 7.685155462626762, 'project': 'DCASE2020', 'exp': 'DCASE2020_full_train', 'model': 'seldnet', 'val_batch': 32, 'full': False, 'scheduler': 'one', 'val_freq': 2, 'cutout': False, 'freqshift': False, 'filtaug': False, 'compfreq': False, 'alltrans': False, 'itfm': False, '_wandb': {}}
+2025-12-03 14:31:02,651 INFO    MainThread:35964 [wandb_init.py:init():872] starting backend
+2025-12-03 14:31:02,897 INFO    MainThread:35964 [wandb_init.py:init():875] sending inform_init request
+2025-12-03 14:31:02,922 INFO    MainThread:35964 [wandb_init.py:init():883] backend started and connected
+2025-12-03 14:31:02,925 INFO    MainThread:35964 [wandb_init.py:init():956] updated telemetry
+2025-12-03 14:31:02,983 INFO    MainThread:35964 [wandb_init.py:init():980] communicating run to backend with 90.0 second timeout
+2025-12-03 14:31:03,689 INFO    MainThread:35964 [wandb_init.py:init():1032] starting run threads in backend
+2025-12-03 14:31:03,874 INFO    MainThread:35964 [wandb_run.py:_console_start():2453] atexit reg
+2025-12-03 14:31:03,875 INFO    MainThread:35964 [wandb_run.py:_redirect():2301] redirect: wrap_raw
+2025-12-03 14:31:03,875 INFO    MainThread:35964 [wandb_run.py:_redirect():2370] Wrapping output streams.
+2025-12-03 14:31:03,875 INFO    MainThread:35964 [wandb_run.py:_redirect():2393] Redirects installed.
+2025-12-03 14:31:03,880 INFO    MainThread:35964 [wandb_init.py:init():1078] run started, returning control to user process
+2025-12-03 14:31:03,880 INFO    MainThread:35964 [wandb_watch.py:_watch():70] Watching
+2025-12-03 14:32:19,675 INFO    MsgRouterThr:35964 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

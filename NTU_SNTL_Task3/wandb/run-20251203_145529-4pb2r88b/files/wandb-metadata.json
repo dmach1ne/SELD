@@ -1,0 +1,40 @@
+{
+  "os":  "Windows-10-10.0.26100-SP0",
+  "python":  "CPython 3.9.16",
+  "startedAt":  "2025-12-03T05:55:29.962576Z",
+  "args":  [
+    "--exp",
+    "DCASE2020_with_eval",
+    "--project",
+    "DCASE2020",
+    "--nb_epochs",
+    "50",
+    "--dnorm"
+  ],
+  "program":  "C:\\Users\\danielahn\\Desktop\\SELD\\NTU_SNTL_Task3\\main.py",
+  "codePath":  "main.py",
+  "git":  {
+    "remote":  "https://github.com/itsjunwei/NTU_SNTL_Task3.git",
+    "commit":  "0e4f207b3e702711b0fc61273e52c73caa79e0ca"
+  },
+  "email":  "danielahn010@gmail.com",
+  "root":  "C:\\Users\\danielahn\\Desktop\\SELD\\NTU_SNTL_Task3",
+  "host":  "SG-05",
+  "executable":  "C:\\Users\\danielahn\\anaconda3\\envs\\dcase2025_task3\\python.exe",
+  "codePathLocal":  "main.py",
+  "cpu_count":  8,
+  "cpu_count_logical":  16,
+  "disk":  {
+    "/":  {
+      "total":  "511163551744",
+      "used":  "454900662272"
+    }
+  },
+  "memory":  {
+    "total":  "14861852672"
+  },
+  "cpu":  {
+    "count":  8,
+    "countLogical":  16
+  }
+}

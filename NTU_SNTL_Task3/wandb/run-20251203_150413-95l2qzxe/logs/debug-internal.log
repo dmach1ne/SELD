@@ -1,0 +1,19 @@
+{"time":"2025-12-03T15:04:13.5537796+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"C:\\Users\\danielahn\\Desktop\\SELD\\NTU_SNTL_Task3\\wandb\\run-20251203_150413-95l2qzxe\\logs\\debug-core.log"}
+{"time":"2025-12-03T15:04:13.9165084+09:00","level":"INFO","msg":"stream: created new stream","id":"95l2qzxe"}
+{"time":"2025-12-03T15:04:13.9165084+09:00","level":"INFO","msg":"stream: started","id":"95l2qzxe"}
+{"time":"2025-12-03T15:04:13.9165084+09:00","level":"INFO","msg":"handler: started","stream_id":"95l2qzxe"}
+{"time":"2025-12-03T15:04:13.917025+09:00","level":"INFO","msg":"sender: started","stream_id":"95l2qzxe"}
+{"time":"2025-12-03T15:04:13.917025+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"95l2qzxe"}
+{"time":"2025-12-03T15:04:14.3421976+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-12-03T15:04:29.3986195+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T15:04:44.3785802+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T15:04:59.3851844+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T15:05:12.5703758+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-12-03T15:05:12.5703758+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-12-03T15:05:13.5807593+09:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading config.yaml","runtime_seconds":0.2842613,"progress":"2.9KB/2.9KB"}],"total_operations":1}}
+{"time":"2025-12-03T15:05:13.6018665+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-03T15:05:14.0029442+09:00","level":"INFO","msg":"stream: closing","id":"95l2qzxe"}
+{"time":"2025-12-03T15:05:14.0029442+09:00","level":"INFO","msg":"handler: closed","stream_id":"95l2qzxe"}
+{"time":"2025-12-03T15:05:14.0029442+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"95l2qzxe"}
+{"time":"2025-12-03T15:05:14.0029442+09:00","level":"INFO","msg":"sender: closed","stream_id":"95l2qzxe"}
+{"time":"2025-12-03T15:05:14.0034499+09:00","level":"INFO","msg":"stream: closed","id":"95l2qzxe"}

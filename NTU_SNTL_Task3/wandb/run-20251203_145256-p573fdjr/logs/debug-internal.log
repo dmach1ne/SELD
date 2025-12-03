@@ -1,0 +1,16 @@
+{"time":"2025-12-03T14:52:56.8786984+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"C:\\Users\\danielahn\\Desktop\\SELD\\NTU_SNTL_Task3\\wandb\\run-20251203_145256-p573fdjr\\logs\\debug-core.log"}
+{"time":"2025-12-03T14:52:57.3308051+09:00","level":"INFO","msg":"stream: created new stream","id":"p573fdjr"}
+{"time":"2025-12-03T14:52:57.3313325+09:00","level":"INFO","msg":"stream: started","id":"p573fdjr"}
+{"time":"2025-12-03T14:52:57.3313325+09:00","level":"INFO","msg":"handler: started","stream_id":"p573fdjr"}
+{"time":"2025-12-03T14:52:57.3313325+09:00","level":"INFO","msg":"sender: started","stream_id":"p573fdjr"}
+{"time":"2025-12-03T14:52:57.3313325+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"p573fdjr"}
+{"time":"2025-12-03T14:52:57.7327596+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-12-03T14:53:12.751442+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T14:53:23.9708314+09:00","level":"INFO","msg":"stream: closing","id":"p573fdjr"}
+{"time":"2025-12-03T14:53:23.9708314+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-12-03T14:53:23.9708314+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-12-03T14:53:24.7680734+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-03T14:53:25.2800342+09:00","level":"INFO","msg":"handler: closed","stream_id":"p573fdjr"}
+{"time":"2025-12-03T14:53:25.2800342+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"p573fdjr"}
+{"time":"2025-12-03T14:53:25.2800342+09:00","level":"INFO","msg":"sender: closed","stream_id":"p573fdjr"}
+{"time":"2025-12-03T14:53:25.2808088+09:00","level":"INFO","msg":"stream: closed","id":"p573fdjr"}

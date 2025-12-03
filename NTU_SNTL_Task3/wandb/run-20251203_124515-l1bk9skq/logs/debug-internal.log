@@ -1,0 +1,15 @@
+{"time":"2025-12-03T12:45:16.4358636+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"C:\\Users\\danielahn\\Desktop\\SELD\\NTU_SNTL_Task3\\wandb\\run-20251203_124515-l1bk9skq\\logs\\debug-core.log"}
+{"time":"2025-12-03T12:45:17.251901+09:00","level":"INFO","msg":"stream: created new stream","id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:17.2529609+09:00","level":"INFO","msg":"stream: started","id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:17.2529609+09:00","level":"INFO","msg":"handler: started","stream_id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:17.2529609+09:00","level":"INFO","msg":"sender: started","stream_id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:17.2529609+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:18.8158763+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-12-03T12:45:21.3791682+09:00","level":"INFO","msg":"stream: closing","id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:21.3797928+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-12-03T12:45:21.3797928+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-12-03T12:45:22.3520724+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-03T12:45:22.7703365+09:00","level":"INFO","msg":"sender: closed","stream_id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:22.7703365+09:00","level":"INFO","msg":"handler: closed","stream_id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:22.7703365+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"l1bk9skq"}
+{"time":"2025-12-03T12:45:22.7703365+09:00","level":"INFO","msg":"stream: closed","id":"l1bk9skq"}

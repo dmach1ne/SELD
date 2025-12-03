@@ -1,0 +1,16 @@
+{"time":"2025-12-03T13:09:48.2462508+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"C:\\Users\\danielahn\\Desktop\\SELD\\NTU_SNTL_Task3\\wandb\\run-20251203_130947-adsfluzx\\logs\\debug-core.log"}
+{"time":"2025-12-03T13:09:48.7523806+09:00","level":"INFO","msg":"stream: created new stream","id":"adsfluzx"}
+{"time":"2025-12-03T13:09:48.7529217+09:00","level":"INFO","msg":"stream: started","id":"adsfluzx"}
+{"time":"2025-12-03T13:09:48.7529217+09:00","level":"INFO","msg":"handler: started","stream_id":"adsfluzx"}
+{"time":"2025-12-03T13:09:48.7529217+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"adsfluzx"}
+{"time":"2025-12-03T13:09:48.7529217+09:00","level":"INFO","msg":"sender: started","stream_id":"adsfluzx"}
+{"time":"2025-12-03T13:09:49.2155929+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-12-03T13:10:04.301199+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T13:10:11.5560885+09:00","level":"INFO","msg":"stream: closing","id":"adsfluzx"}
+{"time":"2025-12-03T13:10:11.5560885+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-12-03T13:10:11.5560885+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-12-03T13:10:12.4633691+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-03T13:10:12.7765389+09:00","level":"INFO","msg":"sender: closed","stream_id":"adsfluzx"}
+{"time":"2025-12-03T13:10:12.7765389+09:00","level":"INFO","msg":"handler: closed","stream_id":"adsfluzx"}
+{"time":"2025-12-03T13:10:12.7765389+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"adsfluzx"}
+{"time":"2025-12-03T13:10:12.7770683+09:00","level":"INFO","msg":"stream: closed","id":"adsfluzx"}

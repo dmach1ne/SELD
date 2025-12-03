@@ -1,0 +1,30 @@
+[2KC:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\dataloader.py:666: UserWarning:
+'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+[2K[31mTraining:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m[35m 90%[0m [36m0:00:03[0m
+[2K[32mValidation:[0m [38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m  0%[0m [36m-:--:--[0m
+[1A[2KExecution time: 0h 0min 27.19s
+Traceback (most recent call last):
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 366, in <module>
+    sys.exit(main(device, args))
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 263, in main
+    avg_val_loss, metric_scores = val_epoch(seld_model, dev_test_iterator, seld_loss, seld_metrics, output_dir)
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 112, in val_epoch
+    for j, (input_features, labels) in enumerate(dev_test_iterator):
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\dataloader.py", line 734, in __next__
+    data = self._next_data()
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\dataloader.py", line 790, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\_utils\fetch.py", line 55, in fetch
+    return self.collate_fn(data)
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\_utils\collate.py", line 398, in default_collate
+    return collate(batch, collate_fn_map=default_collate_fn_map)
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\_utils\collate.py", line 211, in collate
+    return [
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\_utils\collate.py", line 212, in <listcomp>
+    collate(samples, collate_fn_map=collate_fn_map)
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\_utils\collate.py", line 155, in collate
+    return collate_fn_map[elem_type](batch, collate_fn_map=collate_fn_map)
+  File "C:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\_utils\collate.py", line 272, in collate_tensor_fn
+    return torch.stack(batch, 0, out=out)
+RuntimeError: stack expects each tensor to be equal size, but got [50, 6, 4, 14] at entry 0 and [0, 6, 4, 14] at entry 1

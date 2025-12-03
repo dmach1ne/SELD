@@ -1,0 +1,20 @@
+{"time":"2025-12-03T12:46:12.7616624+09:00","level":"INFO","msg":"stream: starting","core version":"0.20.1","symlink path":"C:\\Users\\danielahn\\Desktop\\SELD\\NTU_SNTL_Task3\\wandb\\run-20251203_124612-fmtgjayw\\logs\\debug-core.log"}
+{"time":"2025-12-03T12:46:13.1683169+09:00","level":"INFO","msg":"stream: created new stream","id":"fmtgjayw"}
+{"time":"2025-12-03T12:46:13.1688618+09:00","level":"INFO","msg":"stream: started","id":"fmtgjayw"}
+{"time":"2025-12-03T12:46:13.1688618+09:00","level":"INFO","msg":"writer: Do: started","stream_id":"fmtgjayw"}
+{"time":"2025-12-03T12:46:13.1688618+09:00","level":"INFO","msg":"sender: started","stream_id":"fmtgjayw"}
+{"time":"2025-12-03T12:46:13.1688618+09:00","level":"INFO","msg":"handler: started","stream_id":"fmtgjayw"}
+{"time":"2025-12-03T12:46:13.5332607+09:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-12-03T12:46:28.5532668+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T12:46:43.5637237+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T12:46:58.5673024+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T12:47:13.5538475+09:00","level":"ERROR","msg":"monitor: error sampling metrics: Incorrect function."}
+{"time":"2025-12-03T12:47:13.9443074+09:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-12-03T12:47:13.9448358+09:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-12-03T12:47:14.9934068+09:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-03T12:47:14.9995474+09:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading history steps 4-4, summary, console lines 25-48","runtime_seconds":0.0055677}],"total_operations":1}}
+{"time":"2025-12-03T12:47:15.518905+09:00","level":"INFO","msg":"stream: closing","id":"fmtgjayw"}
+{"time":"2025-12-03T12:47:15.518905+09:00","level":"INFO","msg":"writer: Close: closed","stream_id":"fmtgjayw"}
+{"time":"2025-12-03T12:47:15.5194159+09:00","level":"INFO","msg":"sender: closed","stream_id":"fmtgjayw"}
+{"time":"2025-12-03T12:47:15.5194159+09:00","level":"INFO","msg":"handler: closed","stream_id":"fmtgjayw"}
+{"time":"2025-12-03T12:47:15.5194159+09:00","level":"INFO","msg":"stream: closed","id":"fmtgjayw"}

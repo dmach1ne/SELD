@@ -1,0 +1,179 @@
+_wandb:
+    value:
+        cli_version: 0.20.1
+        m: []
+        python_version: 3.9.16
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+            "2":
+                - 1
+                - 5
+                - 53
+            "3":
+                - 1
+                - 13
+                - 16
+                - 55
+            "4": 3.9.16
+            "5": 0.20.1
+            "8":
+                - 3
+            "10":
+                - 20
+            "12": 0.20.1
+            "13": windows-amd64
+accum_batch:
+    value: 64
+alltrans:
+    value: false
+average:
+    value: macro
+batch_size:
+    value: 64
+checkpoints_dir:
+    value: checkpoints
+compfreq:
+    value: false
+cutout:
+    value: false
+d_max:
+    value: 7.685155462626762
+d_mean:
+    value: 1.9242867099100318
+d_std:
+    value: 0.663059233462568
+dev_test_folds:
+    value:
+        - fold4
+dev_train_folds:
+    value:
+        - fold1
+        - fold2
+        - fold3
+dnorm:
+    value: false
+dropout:
+    value: 0.05
+exp:
+    value: DCASE2020_baseline
+f_pool_size:
+    value:
+        - 4
+        - 4
+        - 2
+feat_dir:
+    value: ../dcase2025_stereo_seld_data_generator/output_2020_stereo/DCASE2020_Stereo_SELD_Dataset\mel64
+filtaug:
+    value: false
+finetune:
+    value: false
+fnn_size:
+    value: 128
+fps:
+    value: 10
+freqshift:
+    value: false
+full:
+    value: false
+gamma:
+    value: false
+hop_length_s:
+    value: 0.0125
+ipd:
+    value: false
+itfm:
+    value: false
+iv:
+    value: false
+label_sequence_length:
+    value: 50
+lad_dist_thresh:
+    value: .inf
+lad_doa_thresh:
+    value: 20
+lad_reldist_thresh:
+    value: 1
+lad_req_onscreen:
+    value: false
+learning_rate:
+    value: 0.001
+log_dir:
+    value: logs
+max_freq:
+    value: 2000
+max_polyphony:
+    value: 3
+modality:
+    value: audio
+model:
+    value: seldnet
+ms:
+    value: false
+multiACCDOA:
+    value: true
+nb_attn_heads:
+    value: 8
+nb_classes:
+    value: 13
+nb_conv_blocks:
+    value: 3
+nb_conv_filters:
+    value: 64
+nb_epochs:
+    value: 5
+nb_fnn_layers:
+    value: 1
+nb_mels:
+    value: 64
+nb_rnn_layers:
+    value: 2
+nb_self_attn_layers:
+    value: 2
+nb_workers:
+    value: 0
+net_type:
+    value: DCASE2020_baseline
+output_dir:
+    value: outputs
+persistent_workers:
+    value: false
+project:
+    value: DCASE2020
+resnet_feature_size:
+    value: 49
+rnn_size:
+    value: 128
+root_dir:
+    value: ../dcase2025_stereo_seld_data_generator/output_2020_stereo/DCASE2020_Stereo_SELD_Dataset
+sampling_rate:
+    value: 24000
+scheduler:
+    value: one
+sed_thresh:
+    value: 0.5
+segment_based_metrics:
+    value: false
+shuffle:
+    value: true
+slite:
+    value: false
+t_pool_size:
+    value:
+        - 2
+        - 2
+        - 2
+thresh_unify:
+    value: 30
+use_jackknife:
+    value: false
+val_batch:
+    value: 32
+val_batch_size:
+    value: 32
+val_freq:
+    value: 2
+weight_decay:
+    value: 0.0001

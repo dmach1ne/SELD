@@ -1,0 +1,49 @@
+[2KC:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\dataloader.p-:--[0m
+y:666: UserWarning: 'pin_memory' argument is set as true but no accelerator is found, then device
+pinned memory won't be used.
+  warnings.warn(warn_msg)
+[2K[31mTraining:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m[35m 80%[0m [36m0:00:03[0m
+[2K[32mValidation:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m━━[0m [35m 67%[0m [36m0:00:01[0m
+[1A[2KEpoch 1/5 | LR: 8.79e-04 | Time: 12/3 | Loss: 0.0581 | F1: 0.000 | LE: nan | DE: nan | RDE: nan | Best: 1 (0.00)
+C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\metrics.py:100: RuntimeWarning: Mean of empty slice
+  F, AngE = F.mean(), np.nanmean(AngE)
+C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\metrics.py:101: RuntimeWarning: Mean of empty slice
+  DistE, RelDistE = np.nanmean(DistE), np.nanmean(RelDistE)
+C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\metrics.py:102: RuntimeWarning: Mean of empty slice
+  OnscreenAq = np.nanmean(OnscreenAq)
+[2K[31mTraining:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m[35m 80%[0m [36m0:00:03[0m
+[1A[2KEpoch 2/5 | LR: 9.05e-04 | Time: 10/3 | Loss: 0.0283 | F1: 0.000 | LE: nan | DE: nan | RDE: nan | Best: 1 (0.00)
+[2K[31mTraining:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m[35m 80%[0m [36m0:00:03[0m
+[2K[32mValidation:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m━━[0m [35m 67%[0m [36m0:00:01[0m
+[1A[2KEpoch 3/5 | LR: 5.22e-04 | Time: 10/2 | Loss: 0.0260 | F1: 0.000 | LE: nan | DE: nan | RDE: nan | Best: 3 (0.00)
+[2K[31mTraining:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m[35m 80%[0m [36m0:00:02[0m
+[1A[2KEpoch 4/5 | LR: 1.23e-04 | Time: 9/2 | Loss: 0.0252 | F1: 0.000 | LE: nan | DE: nan | RDE: nan | Best: 3 (0.00)
+[2K[31mTraining:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m[35m 80%[0m [36m0:00:03[0m
+[2K[32mValidation:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m━━[0m [35m 67%[0m [36m0:00:01[0m
+[1A[2KEpoch 5/5 | LR: 8.04e-06 | Time: 10/2 | Loss: 0.0250 | F1: 0.000 | LE: nan | DE: nan | RDE: nan | Best: 5 (0.00)
+Loading best model checkpoint from: checkpoints\DCASE2020_baseline_audio_multiACCDOA_20251203_124607\best_model.pth
+	Best Epoch: 5	Best F-score: 0.00
+[2K[32mValidation:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m━━[0m [35m 67%[0m [36m0:00:01[0m
+[1A[2K
+
+
+F-score: 0.00%
+DOA error: nan
+Distance error: nan
+Relative distance error: nan
+Class-wise results on unseen data:
+Class	F-score	DOA-Error	Dist-Error	RelDist-Error
+0	0.000 	nan 	nan 	nan
+1	0.000 	nan 	nan 	nan
+2	0.000 	nan 	nan 	nan
+3	0.000 	nan 	nan 	nan
+4	0.000 	nan 	nan 	nan
+5	0.000 	nan 	nan 	nan
+6	0.000 	nan 	nan 	nan
+7	0.000 	nan 	nan 	nan
+8	0.000 	nan 	nan 	nan
+9	0.000 	nan 	nan 	nan
+10	0.000 	nan 	nan 	nan
+11	0.000 	nan 	nan 	nan
+12	0.000 	nan 	nan 	nan
+13	0.000 	nan 	nan 	nan

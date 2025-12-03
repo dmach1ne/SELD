@@ -1,0 +1,1 @@
+{"_timestamp":1.7647336316296368e+09,"Metric/Distance_Error":NaN,"Metric/Angular_Error":NaN,"Metric/Val_3D_SELD_Error":NaN,"_step":4,"_wandb":{"runtime":61},"Loss/Train":0.024991509318351746,"LearningRate":8.039173559862363e-06,"Loss/Validation":0.0265575119604667,"Metric/F1_Score":0,"_runtime":61.187014,"Metric/Relative_Distance_Error":NaN}

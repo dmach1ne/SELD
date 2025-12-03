@@ -1,0 +1,16 @@
+[2KC:\Users\danielahn\anaconda3\envs\dcase2025_task3\lib\site-packages\torch\utils\data\dataloader.py:666: UserWarning:
+'pin_memory' argument is set as true but no accelerator is found, then device pinned memory won't be used.
+  warnings.warn(warn_msg)
+[2K[31mTraining:[0m [38;2;114;156;31m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m100%[0m [36m0:00:00[0m[35m 90%[0m [36m0:00:03[0m
+[2K[32mValidation:[0m [38;2;249;38;114m━━━[0m[38;5;237m╺[0m[38;5;237m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━[0m [35m  8%[0m [36m0:00:50[0m:51[0m
+[1A[2KExecution time: 0h 0min 30.32s
+Traceback (most recent call last):
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 366, in <module>
+    sys.exit(main(device, args))
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 263, in main
+    avg_val_loss, metric_scores = val_epoch(seld_model, dev_test_iterator, seld_loss, seld_metrics, output_dir)
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\main.py", line 125, in val_epoch
+    utils.write_logits_to_dcase_format(logits, params, output_dir, dev_test_iterator.dataset.label_files[start: end])
+  File "C:\Users\danielahn\Desktop\SELD\NTU_SNTL_Task3\utils.py", line 933, in write_logits_to_dcase_format
+    write_to_dcase_output_format(output_dict, output_dir, os.path.basename(filelist[i])[:-3] + '.csv', split)
+IndexError: list index out of range
