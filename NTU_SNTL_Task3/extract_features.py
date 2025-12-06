@@ -73,7 +73,7 @@ class SELDFeatureExtractor():
         os.makedirs(self.feat_dir, exist_ok=True)
 
         if split == 'dev':
-            audio_files = glob.glob(os.path.join(self.root_dir, 'stereo_dev', 'dev-*', '*.wav'))
+            audio_files = glob.glob(os.path.join(self.root_dir, 'stereo_dev', '*.wav')) + glob.glob(os.path.join(self.root_dir, 'stereo_dev_swap', '*.wav'))
         elif split == 'eval':
             audio_files = glob.glob(os.path.join(self.root_dir, 'stereo_eval', 'eval', '*.wav'))
         else:
@@ -110,7 +110,7 @@ class SELDFeatureExtractor():
         os.makedirs(self.feat_dir, exist_ok=True)   # already created by extract_features method
 
         if split == 'dev':
-            label_files = glob.glob(os.path.join(self.root_dir, 'metadata_dev', 'dev-*', '*.csv'))
+            label_files = glob.glob(os.path.join(self.root_dir, 'metadata_dev', '*.csv')) + glob.glob(os.path.join(self.root_dir, 'metadata_dev_swap', '*.csv'))
         elif split == 'eval':  # only for organizers
             label_files = glob.glob(os.path.join(self.root_dir, 'metadata_eval', 'eval', '*.csv'))
         else:

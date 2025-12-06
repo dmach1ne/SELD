@@ -98,8 +98,8 @@ class DataGenerator(Dataset):
             print(f"Fold {fold}: Found {len(glob.glob(audio_pattern))} audio files, {len(glob.glob(label_pattern))} label files")
 
         # Sort files to ensure corresponding audio, video, and label files are in the same order
-        audio_files = sorted(audio_files, key=lambda x: x.split('/')[-1])
-        label_files = sorted(label_files, key=lambda x: x.split('/')[-1])
+        audio_files = sorted(audio_files, key=lambda x: os.path.basename(x))
+        label_files = sorted(label_files, key=lambda x: os.path.basename(x))
 
         print(f"Total: {len(audio_files)} audio files, {len(label_files)} label files")
         # Return the appropriate files

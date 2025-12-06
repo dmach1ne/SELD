@@ -125,17 +125,17 @@ def make_audio_video(start_frame, deg, metadata_path, len_frames, tag_dataset, s
 
 
 def main():
-    source_dir = "./2020dataset"
+    source_dir = "./original"
     target_dir = "./output_2020_stereo"
 
     # Use all metadata files from 2020dataset
-    metadata_paths = sorted(glob.glob("{}/metadata_dev/*.csv".format(source_dir)))
+    metadata_paths = sorted(glob.glob("{}/metadata_eval/*.csv".format(source_dir)))
 
     # params
     len_frames = 50  # 50 frames in metadata = 5 seconds
     tag_dataset = "DCASE2020_Stereo_SELD_Dataset"
-    total_stereo_files = 600  # Adjust as needed
-    random_seed = 20250305
+    total_stereo_files = 10000  # Adjust as needed
+    random_seed = 20251203
     bin_make_video = False  # No video in 2020dataset
 
     random.seed(random_seed)

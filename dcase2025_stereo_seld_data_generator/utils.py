@@ -1,4 +1,5 @@
 import numpy as np
+import os
 import py360convert
 
 
@@ -139,7 +140,9 @@ class CheckOnOffFixedDeg(object):
 
 class CheckOnOffFast(object):
     def __init__(self):
-        self.aziele2valuexy_0deg = np.load("./aziele2valuexy_0deg_ufov100w640h360.npy")
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        npy_path = os.path.join(script_dir, "aziele2valuexy_0deg_ufov100w640h360.npy")
+        self.aziele2valuexy_0deg = np.load(npy_path)
     
     def check(self, deg, azi, ele):
         azi_0deg = (azi + deg) % 360

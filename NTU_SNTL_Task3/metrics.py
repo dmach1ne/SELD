@@ -216,13 +216,22 @@ class ComputeSELDResults(object):
 
         # collect reference files
         self._ref_labels = {}
-        for split in os.listdir(self._desc_dir):
-            for ref_file in os.listdir(os.path.join(self._desc_dir, split)):
-                # Load reference description file
-                gt_dict = load_labels(os.path.join(self._desc_dir, split, ref_file), convert_to_cartesian=False)
+        for item in os.listdir(self._desc_dir):
+            item_path = os.path.join(self._desc_dir, item)
+            if os.path.isdir(item_path):
+                # If item is a directory (split folder), iterate through files in it
+                for ref_file in os.listdir(item_path):
+                    if ref_file.endswith('.csv'):
+                        gt_dict = load_labels(os.path.join(item_path, ref_file), convert_to_cartesian=False)
+                        nb_ref_frames = max(list(gt_dict.keys())) if len(gt_dict) > 0 else 0
+                        self._ref_labels[ref_file] = [organize_labels(gt_dict, nb_ref_frames),
+                                                      nb_ref_frames]
+            elif item.endswith('.csv'):
+                # If item is a CSV file directly in metadata_dev folder
+                gt_dict = load_labels(item_path, convert_to_cartesian=False)
                 nb_ref_frames = max(list(gt_dict.keys())) if len(gt_dict) > 0 else 0
-                self._ref_labels[ref_file] = [organize_labels(gt_dict, nb_ref_frames),
-                                              nb_ref_frames]
+                self._ref_labels[item] = [organize_labels(gt_dict, nb_ref_frames),
+                                          nb_ref_frames]
 
         self._nb_ref_files = len(self._ref_labels)
         self._average = params['average']

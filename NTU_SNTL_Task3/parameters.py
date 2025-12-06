@@ -15,8 +15,8 @@ params = {
     'net_type': 'SELDnet',
 
     # data params
-    'root_dir': '../dcase2025_stereo_seld_data_generator/output_2020_stereo/DCASE2020_Stereo_SELD_Dataset',  # parent directory containing the audio, video and labels directory
-    'feat_dir': '../dcase2025_stereo_seld_data_generator/output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/mel64',  # store extracted features here (using mel64 without dnorm)
+    'root_dir': r'e:\SELD\output_2020_stereo\DCASE2020_Stereo_SELD_Dataset',  # parent directory containing the audio, video and labels directory
+    'feat_dir': r'e:\SELD\output_2020_stereo\DCASE2020_Stereo_SELD_Dataset\mel64',  # store extracted features here (using mel64 without dnorm)
 
     'log_dir': 'logs',  # save all logs here like loss and metrics
     'checkpoints_dir': 'checkpoints',  # save trained model checkpoints and config
@@ -80,7 +80,7 @@ params = {
 
     # folds for training, testing
     # DCASE2020: Use all dev folds + eval windows for training, fold6 for validation
-    'dev_train_folds': ['fold1', 'fold2', 'fold3', 'fold4', 'fold5', 'eval'],  # 494 dev + 2400 eval windows = 2894 samples
+    'dev_train_folds': ['fold1', 'fold2', 'fold3', 'fold4', 'fold5'],  # 494 dev + 2400 eval windows = 2894 samples
     'dev_test_folds': ['fold6'],  # 106 files for validation
 
     # metric params

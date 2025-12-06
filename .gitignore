@@ -1,0 +1,30 @@
+original/
+processed_50k/
+
+# Datasets
+output_2020_stereo/
+DCASE*/
+TAU*/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Training outputs
+checkpoints/
+logs/
+outputs/
+wandb/
+
+# Feature files
+*.pt
+*.pkl
+*.wav
+*.mp4
+
+# IDE/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -25,6 +25,7 @@ import time
 import training_utils as tu
 import argparse
 import numpy as np
+from torch.amp import autocast, GradScaler
 
 
 def setup_model_and_loss(in_feat_shape, device):
@@ -61,7 +62,7 @@ def setup_model_and_loss(in_feat_shape, device):
     return model, loss_fn, metrics
 
 
-def train_epoch(seld_model, dev_train_iterator, optimizer, seld_loss, step_scheduler=None):
+def train_epoch(seld_model, dev_train_iterator, optimizer, seld_loss, scaler, step_scheduler=None):
 
     seld_model.train()
     batch_losses = []
@@ -70,7 +71,7 @@ def train_epoch(seld_model, dev_train_iterator, optimizer, seld_loss, step_sched
     bs = params['batch_size']
     accum_bs = params.get('accum_batch', bs)
     if accum_bs % bs != 0: raise ValueError(f"accum_batch ({accum_bs}) must be a multiple of batch_size ({bs})")
-    accum_steps = accum_bs // bs
+    accum_steps = max(1, accum_bs // bs)
 
     optimizer.zero_grad()
     with Progress(transient=True) as progress:
@@ -78,20 +79,24 @@ def train_epoch(seld_model, dev_train_iterator, optimizer, seld_loss, step_sched
 
         for batch_idx, (input_features, labels) in enumerate(dev_train_iterator):
 
-            input_features, labels = input_features.to(device), labels.to(device)
+            input_features, labels = input_features.to(device, non_blocking=True), labels.to(device, non_blocking=True)
 
-            logits = seld_model(input_features)
+            # Mixed Precision Forward Pass
+            with autocast('cuda'):
+                logits = seld_model(input_features)
+                # compute loss and scale down by accum_steps
+                loss = seld_loss(logits, labels) / accum_steps
 
-            # compute loss and scale down by accum_steps
-            loss = seld_loss(logits, labels) / accum_steps
-            loss.backward()
+            # Mixed Precision Backward Pass
+            scaler.scale(loss).backward()
 
             true_loss = loss.item() * accum_steps
             batch_losses.append(true_loss)
 
-            # every accum_steps mini‑batches, do optimizer step + scheduler
+            # every accum_steps mini-batches, do optimizer step + scheduler
             if (batch_idx + 1) % accum_steps == 0 or (batch_idx + 1) == num_batches:
-                optimizer.step()
+                scaler.step(optimizer)
+                scaler.update()
                 if step_scheduler is not None: step_scheduler.step()
                 optimizer.zero_grad()
 
@@ -110,10 +115,11 @@ def val_epoch(seld_model, dev_test_iterator, seld_loss, seld_metrics, output_dir
         task = progress.add_task("[green]Validation:\t", total=len(dev_test_iterator))
         with torch.no_grad():
             for j, (input_features, labels) in enumerate(dev_test_iterator):
-                input_features, labels = input_features.to(device), labels.to(device)
+                input_features, labels = input_features.to(device, non_blocking=True), labels.to(device, non_blocking=True)
 
-                # Forward pass
-                logits = seld_model(input_features)
+                # Forward pass with Mixed Precision
+                with autocast('cuda'):
+                    logits = seld_model(input_features)
 
                 # Compute loss
                 loss = seld_loss(logits, labels)
@@ -148,6 +154,11 @@ def main(device, args):
     # Adjust number of workers based on the system.
     if platform.system() == 'Linux': 
         params['nb_workers'] = 4
+    else:  # Windows
+        params['nb_workers'] = 4  # Enable multiprocessing workers on Windows
+
+    # Enable cuDNN benchmark for faster convolutions (when input size is fixed)
+    torch.backends.cudnn.benchmark = True
 
     # Set up directories for storing model checkpoints, predictions(output_dir), and create a summary writer
     checkpoints_folder, output_dir, summary_writer = utils.setup(params)
@@ -183,10 +194,11 @@ def main(device, args):
     # Set up dev_train and dev_test data iterator
     dev_train_dataset = DataGenerator(params=params, mode='dev_train', transform=transforms)
     dev_train_iterator = DataLoader(dataset=dev_train_dataset, batch_size=params['batch_size'], num_workers=params['nb_workers'], shuffle=params['shuffle'],
-                                    drop_last=False, pin_memory=True)
+                                    drop_last=False, pin_memory=True, persistent_workers=(params['nb_workers'] > 0), prefetch_factor=2 if params['nb_workers'] > 0 else None)
 
     dev_test_dataset = DataGenerator(params=params, mode='dev_test')
-    dev_test_iterator = DataLoader(dataset=dev_test_dataset, batch_size=params['val_batch_size'], num_workers=params['nb_workers'], shuffle=False, drop_last=False)
+    dev_test_iterator = DataLoader(dataset=dev_test_dataset, batch_size=params['val_batch_size'], num_workers=params['nb_workers'], shuffle=False, drop_last=False,
+                                   pin_memory=True, persistent_workers=(params['nb_workers'] > 0), prefetch_factor=2 if params['nb_workers'] > 0 else None)
 
     # Getting the input feature shape
     first_batch = next(iter(dev_train_iterator))
@@ -200,6 +212,17 @@ def main(device, args):
 
     # Set up model, loss, and metrics
     seld_model, seld_loss, seld_metrics = setup_model_and_loss(in_feat_shape=in_feat_shape, device=device)
+
+    # Compile model for faster execution (PyTorch 2.0+)
+    # Note: torch.compile() requires Triton which only works on Linux
+    if hasattr(torch, 'compile') and platform.system() == 'Linux':
+        print("Compiling model with torch.compile()...")
+        seld_model = torch.compile(seld_model)
+    elif platform.system() != 'Linux':
+        print("Skipping torch.compile() - Triton not supported on Windows")
+
+    # Initialize GradScaler for Mixed Precision Training
+    scaler = GradScaler('cuda')
 
     # Set up optimizer and scheduler
     if params['weight_decay'] != 0:
@@ -222,7 +245,8 @@ def main(device, args):
         print(f"Using vanilla Adam optimizer (Peak LR: {params['learning_rate']})")
 
     # Now we set the learning rate scheduler
-    total_steps = params['nb_epochs'] * np.ceil(len(dev_train_iterator) / (int(params['accum_batch'] // params['batch_size'])))
+    accum_steps = max(1, int(params['accum_batch'] // params['batch_size']))
+    total_steps = params['nb_epochs'] * int(np.ceil(len(dev_train_iterator) / accum_steps))
     step_scheduler = torch.optim.lr_scheduler.OneCycleLR(optimizer=optimizer, max_lr=params['learning_rate'], total_steps=int(total_steps))
     print(f"OneCycleLR scheduler used (Total Number of Steps: {total_steps})")
     print(f"Distance Normalized: {params['dnorm']}\nITFM: {params['itfm']}\n"
@@ -237,7 +261,7 @@ def main(device, args):
         for epoch in range(start_epoch, params['nb_epochs']):
             # ------------- Training -------------- #
             train_start_time = time.time()
-            avg_train_loss = train_epoch(seld_model=seld_model, dev_train_iterator=dev_train_iterator, optimizer=optimizer, seld_loss=seld_loss, step_scheduler=step_scheduler)
+            avg_train_loss = train_epoch(seld_model=seld_model, dev_train_iterator=dev_train_iterator, optimizer=optimizer, seld_loss=seld_loss, scaler=scaler, step_scheduler=step_scheduler)
             train_time = time.time() - train_start_time
 
             # Log training loss to W&B
@@ -322,8 +346,8 @@ if __name__ == '__main__':
     parser.add_argument('--project', type=str, default='Task3', help='W&B Project Name')
     parser.add_argument('--exp', type=str, default='Baseline', help='Name of the experiment')
     parser.add_argument('--model', type=str, default='seldnet', help='Model to use')
-    parser.add_argument('--batch_size', type=int, default=64, help='Batch size to use')
-    parser.add_argument('--accum_batch', type=int, default=64, help='True batch size to use')
+    parser.add_argument('--batch_size', type=int, default=256, help='Batch size to use')
+    parser.add_argument('--accum_batch', type=int, default=256, help='True batch size to use')
     parser.add_argument('--val_batch', type=int, default=32, help='Batch size for the validation dataloader')
     parser.add_argument('--nb_epochs', type=int, default=100, help='Total number of epochs')
     parser.add_argument('--full', action='store_true', help='If want to validate each epoch')

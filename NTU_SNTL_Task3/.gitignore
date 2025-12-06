@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+.eggs/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+env/
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Training outputs (large files)
+checkpoints/
+logs/
+outputs/
+wandb/
+
+# Feature files (generated)
+*.pt
+*.pkl
+scaler_*.pkl
+
+# Data directories (large datasets)
+mel64*/
+stereo_*/
+metadata_*/
+audio_*/
+video_*/
+*.wav
+*.mp4
+*.avi
+
+# External dataset paths
+DCASE*/
+TAU*/
+output_*/
+output_2020_stereo/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.log

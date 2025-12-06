@@ -1,0 +1,13 @@
+Not made because of clipping 1.0050232410430908: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix006_deg240_start0098.wav
+Not made because of clipping 1.0067813396453857: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_dev\fold1_room2_mix013_ov1_deg113_start0383.wav
+Not made because of clipping 1.0088058710098267: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix158_deg049_start0256.wav
+Not made because of clipping 1.0045515298843384: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix099_deg326_start0192.wav
+Not made because of clipping 1.0009703636169434: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix006_deg235_start0101.wav
+Not made because of clipping 1.009669303894043: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix099_deg342_start0198.wav
+Not made because of clipping 1.005295991897583: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix045_deg350_start0011.wav
+Not made because of clipping 1.0125733613967896: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix099_deg156_start0168.wav
+Not made because of clipping 1.0122536420822144: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix099_deg154_start0176.wav
+Not made because of clipping 1.0048201084136963: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix006_deg066_start0124.wav
+Not made because of clipping 1.0053644180297852: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix158_deg011_start0247.wav
+Not made because of clipping 1.0064582824707031: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_dev\fold6_room1_mix091_ov2_deg307_start0413.wav
+Not made because of clipping 1.002870798110962: ./output_2020_stereo/DCASE2020_Stereo_SELD_Dataset/stereo_eval\mix099_deg325_start0217.wav
