@@ -1,5 +1,9 @@
 # Improved Feature Engineering and Data Augmentation for 3-Dimensional Sound Event Localization and Detection with Distance Estimation
 
+<p align="center">
+  <img src="docs/assets/hearo-interface.png" alt="Hearo interface showing sound direction and detected events" width="420">
+</p>
+
 This repository implements the audio-only system of our DCASE 2025 Challenge submission. 
 
 Within this work, we propose a set of perceptually-motivated input features, including Mid-Side (MS) spectrograms, Mid-Side Intensity Vector (IV), and the Magnitude-Squared Coherence (MSC) between the stereo channels. 
